@@ -192,7 +192,7 @@ module.exports = {
     'test/unit/setup.js': "unit && runner === 'jest'",
     'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
-    'src/assets/sass/*': 'sass',
+    'src/assets/sass/**/*': 'sass',
   },
   complete: function(data, { chalk }) {
     const green = chalk.green
