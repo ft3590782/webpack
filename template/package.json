@@ -27,7 +27,6 @@
   "dependencies": {
     "vue": "^2.5.2"{{#router}},
     "vue-router": "^3.0.1"{{/router}}
-
   },
   "devDependencies": {
     {{#lint}}
@@ -121,12 +120,14 @@
     {{#sass}}
     "node-sass": "^3.0.1",
     "sass-loader": "^7.1.0",{{/sass}}
-    {{#px2vm}}
-     "postcss-aspect-ratio-mini": "0.0.2",
+    {{#if_eq px2vm "install"}}
+    "postcss-aspect-ratio-mini": "0.0.2",
     "postcss-cssnext": "^3.1.0",
     "postcss-px-to-viewport": "0.0.3",
     "postcss-viewport-units": "^0.1.6",
-    "postcss-write-svg": "^3.0.1",{{/px2vm}}
+    "postcss-write-svg": "^3.0.1",
+    "cssnano": "^4.1.7",
+    "cssnano-preset-advanced": "^4.0.5"{{/if_eq}}
   },
   "engines": {
     "node": ">= 6.0.0",
