@@ -31,7 +31,7 @@ module.exports = {
       return templateVersion
     },
   },
-  
+
   prompts: {
     name: {
       when: 'isNotTest',
@@ -73,6 +73,28 @@ module.exports = {
       when: 'isNotTest',
       type: 'confirm',
       message: 'Install vue-router?',
+    },
+    sass: {
+      when: 'isNotTest',
+      type: 'confirm',
+      message: 'Install sass?',
+    },
+    px2vm: {
+      when: 'isNotTest',
+      type: 'list',
+      message: 'Install px2vm?',
+      choices: [
+        {
+          name: 'Yes',
+          value: 'install',
+          short: 'install',
+        },
+        {
+          name: 'No',
+          value: 'No',
+          short: 'No',
+        }
+      ],
     },
     lint: {
       when: 'isNotTest',
@@ -145,6 +167,11 @@ module.exports = {
           short: 'npm',
         },
         {
+          name: 'Yes, use CNPM',
+          value: 'cnpm',
+          short: 'cnpm',
+        },
+        {
           name: 'Yes, use Yarn',
           value: 'yarn',
           short: 'yarn',
@@ -170,6 +197,7 @@ module.exports = {
     'test/unit/setup.js': "unit && runner === 'jest'",
     'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
+    'src/assets/sass/*': 'sass',
   },
   complete: function(data, { chalk }) {
     const green = chalk.green

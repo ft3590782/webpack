@@ -7,7 +7,9 @@ import App from './App'
 {{#router}}
 import router from './router'
 {{/router}}
-
+{{#sass}}
+import './assets/scss/normalize.scss'
+{{/sass}}
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
